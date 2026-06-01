@@ -1,0 +1,20 @@
+body{
+    background-color: aliceblue;
+}
+
+.cord-Filme{
+    transition: 0,3s;
+    cursor: pointer;
+}
+
+.cord-Filme:houver{
+    transform: scale(1.03);
+}
+
+.card-Filme img{
+    height: 400px;
+    object-fit: cover;
+}
+
+
+
