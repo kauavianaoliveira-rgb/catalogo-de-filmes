@@ -1,0 +1,38 @@
+const Jogos= [
+    { titulo: "Minecraft", imagem: "https://uploads.jovemnerd.com.br/wp-content/uploads/Minecraft-Wall.jpg", descricao: "O Minecraft é um jogo de aventura e construção estilo sandbox (mundo aberto), onde os jogadores podem interagir, explorar e modificar um ambiente tridimensional feito inteiramente de blocos." , breve: "Construa o que pensar" },
+    { titulo: "Rocket league", imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlSzE3_g_k0xcGRFzY4b98UxaLo6d9uosApqWVln9--Q&s=10", descricao: "Rocket League é um jogo eletrônico de futebol em veículos desenvolvido e publicado pela Psyonix. Foi lançado pela primeira vez para Microsoft Windows e PlayStation 4 em 7 de julho de 2015, com as portes para o Xbox One, MacOS, Linux e Nintendo Switch sendo lançados posteriormente." },
+    { titulo: "Mortal Kombat", imagem: "https://upload.wikimedia.org/wikipedia/pt/4/4b/Capa_Mortal_Kombat_2011.jpg", descricao: "Mortal Kombat é um jogo eletrônico de luta de 2011 desenvolvido pela NetherRealm Studios e publicado pela Warner Bros. Interactive Entertainment. É o nono título principal da série de luta Mortal Kombat e um soft reboot da franquia." },
+    { titulo: "Grand Theft Auto 5 ", imagem: https://upload.wikimedia.org/wikipedia/pt/thumb/8/80/Grand_Theft_Auto_V_capa.png/250px-Grand_Theft_Auto_V_capa.png", descricao: "Grand Theft Auto V é um jogo eletrônico de ação e aventura desenvolvido pela Rockstar North e publicado pela Rockstar Games." },
+    { titulo: "Fifa 25", imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxnGVsMgysDh3_jCU29T8Tnm2sptgH_5qGm5VqVYx6QQ&s=10", descricao: "Você disse: fifa 25O EA SPORTS FC 25 (sucessor da franquia FIFA) traz grandes inovações, com destaque para o modo Rush 5x5, melhorias táticas com o FC IQ e adições aos Modos Carreira. O jogo está disponível para PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S, Nintendo Switch e PC.Principais DestaquesModo Rush 5x5: Uma nova experiência dinâmica e rápida de futebol 5 contra 5, integrada aos modos Football Ultimate Team, Clubs e Jogo Rápido.FC IQ: Uma reformulação tática que proporciona um controle estratégico mais profundo, utilizando um modelo de IA baseado em dados reais do futebol mundial para melhorar o posicionamento e a movimentação coletiva.Autenticidade: O game conta com mais de 19.000 atletas, 700 clubes e mais de 30 ligas licenciadas, incluindo a UEFA Champions League.Modo Carreira: Novidades na gestão tática e a introdução da carreira feminina.Plataformas e Onde JogarVocê pode encontrar o jogo completo nas principais lojas digitais e varejistas. Os valores variam dependendo da plataforma e promoções ativas:PlayStation: Confira os preços e compre na PlayStation Store ou busque ofertas físicas na Amazon Brasil.Xbox: Adquira a sua versão na Microsoft Store.PC: O jogo está disponível para compra na Steam e na EA App.Experiência GratuitaSe você quiser testar o jogo antes de comprar, a EA disponibiliza o EA SPORTS FC 25 Showcase, uma versão gratuita que permite experimentar algumas funcionalidades e modos do título.Para dicas de como aproveitar o novo modo Rush e dominar as táticas do FC IQ:30s⚽ EA SPORTS FC 25 - ANÁLISE / REVIEW - VALE A PENA? ⚽VoxelYouTube · 10 de out. de 2024As respostas da IA podem conter erros. Saiba mais11 sitesEA SPORTS™ FC 25 — Jogos para PS4 e PS5 | PlayStation (Brasil)EA SPORTS FC™ 25 conta com os melhores jogadores dos maiores clubes e competições do planeta, além de dados de partidas das ligas ...PlayStationJogar EA SPORTS FC™ 25 para Xbox Series X|SO EA SPORTS FC™ 25 oferece mais maneiras de ganhar pelo clube. Jogue em equipe no modo 5x5 do Rush, uma nova maneira de jogar com ...XBOXPágina inicial de EA SPORTS FC™ 25 - Electronic ArtsO EA SPORTS FC™ 25 oferece mais maneiras de ganhar pelo clube. Jogue com suas amizades nos seus modos favoritos com o novo Rush 5x...Electronic Arts Home PageMostrar tudoVocê disse: faça uma descrição resumidaO EA SPORTS FC 25 é o principal simulador de futebol da EA Sports, trazendo elencos e uniformes atualizados com mais de 19.000 jogadores e 700 times licenciados. O grande destaque desta edição é o modo Rush 5x5, que oferece partidas rápidas em campo reduzido, e o sistema FC IQ, que renova a inteligência artificial tática das equipes. O jogo está disponível para consoles (PlayStation, Xbox, Nintendo Switch) e PC." },
+    { titulo: "Need for speed", imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuaIngAMYDEv3yNBpRARhyEmTcK5D62gdvFCmGUlYlA&s=10", descricao: "Need for Speed é uma série de jogos eletrônicos de corrida automóvel publicada pela Electronic Arts e produzida por vários estúdios incluindo o canadiano EA Black Box, o britânico Criterion Games e o sueco Ghost Games. " },
+]
+
+const listarSeries = document.getElementById("listarSeries");
+
+function mostrarSerie(lista) {
+    listarSeries.innerHTML = ""
+    lista.forEach(serie => {
+        listarSeries.innerHTML += `
+        <div class="col-md-4">
+          <div class="card card-filme h-100">
+            <img src="${serie.imagem}" class="card-img-top">
+            <div class="card-body">
+              <h3>${serie.titulo}</h3>
+              <p>${serie.breve}</p>
+              <button class="btn btn-dark" onclick="verDetalhes('${serie.titulo}', '${serie .descricao}')">Ver detalhes</button>
+            </div>
+          </div>
+        </div>
+        `
+    })
+}
+
+mostrarSerie(serie)
+
+function verDetalhes(titulo, descricao) {
+    Swal.fire({
+        title: titulo,
+        text: descricao,
+        icon: "info"
+    })
+}
